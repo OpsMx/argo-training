@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: guestbook-ui
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/OpsMx/argo-training  # Correct base URL for the repository
+    targetRevision: main  # Replace with the branch name if necessary (e.g., 'main' or 'master')
+    path: guestbook-ui  # Optional: the path to the app directory in the repo, if the application is in a subfolder
+  destination:
+    server: https://kubernetes.default.svc  # Default Kubernetes API server URL
+    namespace: guestbook  # Namespace where the app should be deployed
+  syncPolicy:
+    automated:
+      prune: true  # Automatically prune resources that are no longer part of the application
+      selfHeal: true  # Automatically heal resources if they diverge from the desired state
