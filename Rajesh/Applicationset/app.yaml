@@ -1,0 +1,30 @@
+apiVersion: argoproj/v1alpha1
+kind: Application
+metadata: 
+  name: ApplicationSet
+  namespace: argocd
+spec:
+  generator:
+  - list:
+      elements:
+      - namespace: dev
+      - namespace: test
+      - namespace: uat
+  template: 
+    metadata:
+      name: '{{namespace}}-color-app'
+    spec: 
+      project: default
+      source: 
+      repoURL: 
+      targetRevision:
+      path:
+    destination:
+      server: https://kubernetes.default.svc
+      namespace: '{{namespace}}'
+    syncPolicy:
+      automated:
+        prune: true
+        selfHeal: true
+     
+	
