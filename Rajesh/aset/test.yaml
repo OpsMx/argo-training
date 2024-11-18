@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: list-appset
+spec:
+  generators:
+    - list:
+        elements:
+          - name: "dev"
+            namespace: "dev"
+          - name: "qa"
+            namespace: "qa"
+          - name: "prod"
+            namespace: "prod"
+  template:
+    metadata:
+      name: "{{ .name }}-app"
+    spec:
+      project: default
+      source:
+        repoURL: "https://github.com/OpsMx/argo-training"
+        targetRevision: 'HEAD'
+        path: "Rajesh/testapplication"
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: "{{ .namespace }}"
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
