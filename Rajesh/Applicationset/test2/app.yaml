@@ -9,7 +9,45 @@ spec:
         elements:
         -  name: guestbook-ui
            repoURL: https://github.com/OpsMx/argo-training.git
+           targetRevision: HEADapiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata: 
+  name: apset
+  namespace: argocd
+spec:
+  generators:
+    - list:
+        elements:
+        -  name: guestbook-ui
+           repoURL: https://github.com/OpsMx/argo-training.git
            targetRevision: HEAD
+           path: Applicationset/Applicationfiles/app1
+        -  name: app-of-app
+           repoURL: https://github.com/OpsMx/argo-training.git
+           targetRevision: HEAD
+           path: Applicationset/Applicationfiles/app2
+  template:
+     metadata:
+       name: '{{name}}-app'
+     spec:
+       project: default
+       source: 
+         repoURL: '{{repoURL}}'
+         targetRevision: '{{targetRevision}}'
+         path: '{{targetRevision}}'
+       destination: 
+         server: https://kubernetes.default.svc
+         namespace: '{{name}}-test'
+       syncPolicy:
+         automated:
+           prune: true
+           selfHeal: true
+         syncOptions:
+         - CreateNamespace=true
+           
+       
+     
+           
            path: Applicationset/Applicationfiles/app1
         -  name: app-of-app
            repoURL: https://github.com/OpsMx/argo-training.git
