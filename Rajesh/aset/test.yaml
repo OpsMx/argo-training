@@ -18,7 +18,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: "https://github.com/OpsMx/argo-training"
+        repoURL: "https://github.com/OpsMx/argo-training.git"
         targetRevision: 'HEAD'
         path: "Rajesh/testapplication"
       destination:
