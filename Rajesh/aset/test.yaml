@@ -6,14 +6,14 @@ spec:
   generators:
     - list:
         elements:
-          - name: guestbook-ui
+          - name: nginx-deployment
             repoURL: https://github.com/OpsMx/argo-training.git          #pod
             targetRevision: HEAD
-            path: Rajesh/test
-          - name: nginx-deployment12
+            path: Rajesh/Applicationsetfiles/app1
+          - name: nginx-service
             repoURL: https://github.com/OpsMx/argo-training.git           #service
             targetRevision: HEAD
-            path: Rajesh/test3
+            path: Rajesh/Applicationsetfiles/app2
   template:
     metadata:
       name: "{{ .name }}-app"
