@@ -12,7 +12,7 @@ spec:
       - namespace: uat
   template: 
     metadata:
-      name: '{{namespace}}'
+      name: '{{namespace}}-color-app'
     spec: 
       project: default
       source: 
