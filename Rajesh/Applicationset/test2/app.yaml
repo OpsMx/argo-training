@@ -11,7 +11,7 @@ spec:
            repoURL: https://github.com/OpsMx/argo-training.git
            targetRevision: 'Head'
            path: Applicationset/Applicationfiles/app1
-        -  name: helm-guestbook
+        -  name: app-of-app
            repoURL: https://github.com/OpsMx/argo-training.git
            targetRevision: 'Head'
            path: Applicationset/Applicationfiles/app2
