@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: color-applicationset
+  name: color-applicationset  # Changed to lowercase and RFC 1123-compliant
   namespace: argocd
 spec:
   generators:
