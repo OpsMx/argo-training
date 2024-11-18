@@ -7,7 +7,7 @@ spec:
     - list:
         elements:
           - name: nginx-deployment
-            repoURL: https://github.com/OpsMx/argo-training.git          #pod
+            repoURL: https://github.com/OpsMx/argo-training.git          #deployment
             targetRevision: HEAD
             path: Rajesh/Applicationsetfiles/app1
           - name: nginx-service
