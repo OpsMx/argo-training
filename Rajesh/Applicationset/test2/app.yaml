@@ -9,7 +9,7 @@ spec:
         elements:
         -  name: guestbook-ui
            repoURL: https://github.com/OpsMx/argo-training.git
-           targetRevision: HEADapiVersion: argoproj.io/v1alpha1
+           targetRevision: HEAD
 kind: ApplicationSet
 metadata: 
   name: apset
