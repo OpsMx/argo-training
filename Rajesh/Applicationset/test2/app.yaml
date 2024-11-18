@@ -9,11 +9,11 @@ spec:
         elements:
         -  name: guestbook-ui
            repoURL: https://github.com/OpsMx/argo-training.git
-           targetRevision: 'HEAD'
+           targetRevision: HEAD
            path: Applicationset/Applicationfiles/app1
         -  name: app-of-app
            repoURL: https://github.com/OpsMx/argo-training.git
-           targetRevision: 'HEAD'
+           targetRevision: HEAD
            path: Applicationset/Applicationfiles/app2
   templete:
      metadata:
