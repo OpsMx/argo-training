@@ -20,9 +20,9 @@ spec:
     spec:
       project: default
       source:
-        repoURL: "https://github.com/OpsMx/argo-training.git"
-        targetRevision: 'HEAD'
-        path: "Rajesh/aset/deployment"
+        repoURL: '{{repoURL}}'
+        targetRevision: '{{targetRevision}}'
+        path: '{{path}}'
       destination:
         server: https://kubernetes.default.svc
         namespace: "{{ .namespace }}"
