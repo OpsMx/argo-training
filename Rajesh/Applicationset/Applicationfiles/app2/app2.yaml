@@ -12,7 +12,7 @@ spec:
   source:
     path: sampleapps
     repoURL: 'https://github.com/opsmx/isd-sample-apps.git'
-    targetRevision: HEAD
+    targetRevision: "HEAD'
   project: opsmxproj
   syncPolicy:
     automated:
