@@ -4,7 +4,7 @@ metadata:
   name: ApplicationSet
   namespace: argocd
 spec:
-  generator:
+  generators:
   - list:
       elements:
       - namespace: dev
