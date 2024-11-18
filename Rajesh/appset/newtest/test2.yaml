@@ -18,7 +18,7 @@ spec:
       source: 
         repoURL: https://github.com/OpsMx/argo-training.git
         targetRevision: 'HEAD'
-        path: Rajesh/test3
+        path: Rajesh/appset/newtest
       destination:
         server: https://kubernetes.default.svc
       namespace: '{{namespace}}'
