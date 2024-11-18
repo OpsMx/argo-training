@@ -6,12 +6,14 @@ spec:
   generators:
     - list:
         elements:
-          - name: "dev"
-            namespace: "dev"
-          - name: "qa"
-            namespace: "qa"
-          - name: "prod"
-            namespace: "prod"
+          - name: guestbook-ui
+            repoURL: https://github.com/OpsMx/argo-training.git          #pod
+            targetRevision: HEAD
+            path: Rajesh/test
+          - name: nginx-deployment12
+            repoURL: https://github.com/OpsMx/argo-training.git           #service
+            targetRevision: HEAD
+            path: Rajesh/test3
   template:
     metadata:
       name: "{{ .name }}-app"
