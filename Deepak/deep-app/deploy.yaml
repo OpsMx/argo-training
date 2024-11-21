@@ -1,21 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: deep-app
-  labels:
-    app: my-app
+  name: nginx-deployment
 spec:
-  replicas: 3  # Number of desired replicas
   selector:
     matchLabels:
-      app: my-app
+      app: nginx
+  replicas: 2 # tells deployment to run 2 pods matching the template
   template:
     metadata:
       labels:
-        app: my-app
+        app: nginx
     spec:
       containers:
-      - name: my-app-container
-        image: my-app-image:latest  # Docker image to use
+      - name: nginx
+        image: nginx:1.14.2
         ports:
-        - containerPort: 80  # Port the container exposes
+        - containerPort: 80
