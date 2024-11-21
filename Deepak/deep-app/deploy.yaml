@@ -13,7 +13,7 @@ spec:
       path: raj-app
       targetRevision: HEAD
     - repoURL: https://github.com/OpsMx/argo-training.git
-      path: Rajesh/test
+      path: Rajesh/apps
       targetRevision: HEAD
   syncPolicy:
     automated:
