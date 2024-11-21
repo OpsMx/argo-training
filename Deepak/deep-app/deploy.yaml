@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deep-app
+  labels:
+    app: my-app
+spec:
+  replicas: 3  # Number of desired replicas
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: my-app-container
+        image: my-app-image:latest  # Docker image to use
+        ports:
+        - containerPort: 80  # Port the container exposes
