@@ -12,7 +12,7 @@ spec:
     - repoURL: https://github.com/deepakjatoth12/argo-app.git
       path: raj-app
       targetRevision: HEAD
-    - repoURL: 
+    - repoURL: https://github.com/OpsMx/argo-training.git
       path: Rajesh/test
       targetRevision: HEAD
   syncPolicy:
