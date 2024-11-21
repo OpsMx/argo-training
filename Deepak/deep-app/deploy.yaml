@@ -13,7 +13,7 @@ spec:
       path: raj-app
       targetRevision: HEAD
     - repoURL: 
-      path: raj-app
+      path: Rajesh/test
       targetRevision: HEAD
   syncPolicy:
     automated:
